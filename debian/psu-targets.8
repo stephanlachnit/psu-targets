@@ -1,0 +1,30 @@
+.\" (C) Copyright 2019 Stephan Lachnit <stephanlachnit@protonmail.com>,
+.TH psu-targets 8 "June 21 2019"
+.SH NAME
+psu-targets \- adds power supply targets to systemd
+.SH DESCRIPTION
+.PP
+This manual page documents briefly how to use \fBpsu-targets\fP.
+.PP
+\fBpsu-targets\fP adds a event to acpid which detects changes to the power
+supply of the system. If it detects a power adapter, it will start
+"\fBpsu-adp.target\fP", otherwise it will start "\fBpsu-bat.target\fP". If one
+of those targets will be activated, the other one will be stopped.
+.SH EXAMPLE
+.PP
+If a service is to be started if the current power supply is a battery, add
+WantedBy=psu-bat.target in the [Install] section of the service file.
+.PP
+If a service is to be started if the current power supply is a power adapter,
+add WantedBy=psu-adp.target in the [Install] section of the service file.
+.SH NOTES
+.PP
+The functionality to detect if a power adapter is used relies on the assumption
+that all power adapters in \fI/sys/class/power_supply\fP start with an 'A', and
+batteries doesn't start with an 'A'. If this isn't the case with your setup you
+can change this behaviour by editing \fI/etc/acpi/psu-targets.sh\fP.
+.PP
+You can check all events via "\fB# journalctl -u psu-targets.service\fP".
+.SH SEE ALSO
+.PP
+Readme located at \fI/usr/share/doc/README.md\fP

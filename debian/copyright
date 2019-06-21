@@ -1,0 +1,11 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: psu-targets
+Source: https://github.com/stephanlachnit/psu-targets
+
+Files: *
+Copyright: 2019 Stephan Lachnit
+License: GPL-3
+
+License: GPL-3
+ On Debian systems, the complete text of the GNU General
+ Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".

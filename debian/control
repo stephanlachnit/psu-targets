@@ -1,0 +1,16 @@
+Source: psu-targets
+Section: admin
+Priority: optional
+Maintainer: Stephan Lachnit <stephanlachnit@protonmail.com>
+Build-Depends: debhelper (>= 11), pkg-config
+Standards-Version: 4.3.0
+Homepage: https://github.com/stephanlachnit/psu-targets
+Vcs-Browser: https://github.com/stephanlachnit/psu-targets/tree/debian
+Vcs-Git: https://github.com/stephanlachnit/psu-targets.git
+
+Package: psu-targets
+Architecture: all
+Depends: ${misc:Depends}, acpid, systemd
+Description: adds power supply targets to systemd
+ Adds two new system tartgets to systemd: psu-adp.target and psu-bat.target
+ These targets will be triggered if the power supply of the system changes.

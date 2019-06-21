@@ -1,0 +1,6 @@
+debian/.debhelper
+debian/psu-targets
+debian/debhelper-build-stamp
+debian/files
+debian/psu-targets.postrm.debhelper
+debian/psu-targets.substvars
