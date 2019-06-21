@@ -1,0 +1,4 @@
+[Unit]
+Description=using power adapter
+DefaultDependencies=no
+StopWhenUnneeded=no

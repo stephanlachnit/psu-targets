@@ -1,0 +1,8 @@
+[Unit]
+Description=set power supply target
+
+[Service]
+ExecStart=/etc/acpi/psu-targets.sh
+
+[Install]
+WantedBy=multi-user.target
